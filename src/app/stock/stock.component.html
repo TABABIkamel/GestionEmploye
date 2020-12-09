@@ -1,0 +1,28 @@
+<br>
+<button class="btn btn-primary btn-block" (click)="rederictionVersAdd()">ajouter</button> <br>
+<button class="btn btn-primary btn" (click)="chercher()">Chercher</button><br><br>
+<div class="form-group">
+<input class="form-control" class="form-control" type="text" [(ngModel)]="critere" placeholder="Enter votre critère de recherche">
+</div>
+<div class="form-group">
+<input class="form-control" class="form-control" type="text" [(ngModel)]="value" placeholder="Enter votre valeur à chercher">
+</div>
+<div class="form-group">
+ {{msg}}
+</div>
+
+
+<table class="table">
+    <thead>
+        <tr>
+          <th scope="col">id</th>
+          <th scope="col">nom</th>
+          <th scope="col">marque</th>
+          <th scope="col">prix</th>
+        </tr>
+      </thead>
+    <tr *ngFor="let p of listStock" >
+        <td>{{p.id}}</td> <td>{{p.nom}}</td> <td>{{p.marque}}</td> <td>{{p.prix}}</td> 
+        <td><button type="button"  (click)="supprimer(p.id)">supprimer</button></td> <td><button [routerLink]="['/modifStock',p.id]" >modifier</button></td>
+    </tr>
+</table>

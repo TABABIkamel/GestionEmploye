@@ -1,0 +1,37 @@
+<form #f="ngForm">
+    <br>
+    <label [style.font-weight]="'bold'">ID</label> <br>
+    <div class="form-group"><input  type="text" class="form-control" name="id" [(ngModel)]="stock.id" #i="ngModel" required disabled [style.color]="'white'" [style.background-color]="'black'"></div><br>
+    <div  *ngIf="i.invalid">
+        <div class="alert alert-danger" *ngIf="i.touched && i.errors.required">
+            champ id obligatoire
+        </div>
+    </div>
+    <label [style.font-weight]="'bold'">NOM</label> <br>
+    <div class="form-group"><input  type="text" class="form-control" name="nom" [(ngModel)]="stock.nom" #n="ngModel" required></div><br>
+    <div *ngIf="n.invalid">
+        <div class="alert alert-danger" *ngIf="n.touched && n.errors.required">
+            champ nom obligatoire
+        </div>
+    </div>
+    
+        <label [style.font-weight]="'bold'">MARQUE</label><br> 
+        <div class="form-group"><input  type="text" class="form-control" name="marque" [(ngModel)]="stock.marque" #m="ngModel" required></div><br>
+        <div *ngIf="m?.invalid">
+            <div class="alert alert-danger" *ngIf="m.touched && m.errors.required">
+                champ marque obligatoire
+            </div>
+        </div>
+        <label [style.font-weight]="'bold'">PRIX</label>
+        <div><input  type="text" class="form-control" name="prix" [(ngModel)]="stock.prix" #p="ngModel" required pattern="[1-9]*"></div>
+        <div *ngIf="p.invalid">
+            <div class="alert alert-danger" *ngIf="p.touched && p.errors.required">
+                champ prix obligatoire
+            </div>
+            <div class="alert alert-danger" *ngIf="p.touched && p.errors.pattern">
+                champ doit comencer par [1..9]
+            </div>
+         </div>   
+        <br><button class="btn btn-primary btn-block" [disabled]="f.invalid" (click)="addStock()">Modifier</button>
+    </form>
+  

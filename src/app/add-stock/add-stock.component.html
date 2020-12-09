@@ -1,0 +1,46 @@
+<br> <br>
+<form [formGroup]="stockk" class="form-group">
+<div class="form-group">
+    <input class="form-control" type="text" formControlName="id" [(ngModel)]="stock.id" placeholder="Enter un ID" >
+    <div class="form-group" *ngIf="id.invalid">
+        <div class="alert alert-danger" *ngIf="id.touched && id.errors.required" [style.color]="'red'" [style.font-weight]="'bold'">
+            champ id obligatoire
+        </div>
+    </div>
+</div>
+
+<div class="form-group">
+    <input class="form-control" type="text" formControlName="nom" [(ngModel)]="stock.nom" placeholder="Enter le NOM">
+    <div class="form-group" *ngIf="nom.invalid">
+        <div *ngIf="nom.touched && nom.errors.required" class="alert alert-danger" [style.color]="'red'" [style.font-weight]="'bold'">
+            champ nom obligatoire
+        </div>
+    </div>
+</div>
+
+<div class="form-group">
+        <input class="form-control" type="text" formControlName="marque" [(ngModel)]="stock.marque" placeholder="Enter la MARQUE">
+        <div *ngIf="marque?.invalid">
+            <div class="alert alert-danger" *ngIf="marque.touched && marque.errors.required" [style.color]="'red'" [style.font-weight]="'bold'">
+                champ marque obligatoire
+            </div>
+        </div>
+</div>    
+
+<div class="form-group">
+        <input class="form-control" type="text" formControlName="prix" [(ngModel)]="stock.prix" placeholder="Enter le PRIX">
+        <div class="form-group" *ngIf="prix.invalid">
+            <div class="alert alert-danger" *ngIf="prix.touched && prix.errors.required" [style.color]="'red'" [style.font-weight]="'bold'">
+                champ prix obligatoire
+            </div>
+            <div class="alert alert-danger" *ngIf="prix.touched && prix.errors.pattern" [style.color]="'red'" [style.font-weight]="'bold'">
+                champ doit comencer par [1..9]
+            </div>
+         </div>  
+</div>          
+<div class="form-group form-check">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          <label class="form-check-label" for="exampleCheck1">Check me out</label>
+        </div>
+        <br><button class="btn btn-primary" [disabled]="stockk.invalid" (click)="ajouterStock(stock)">Ajouter</button>
+    </form>

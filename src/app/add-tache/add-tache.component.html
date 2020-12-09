@@ -1,0 +1,64 @@
+<!--<form #f="ngForm">
+    <label>id</label><br>
+    <input type="text" name="id" [(ngModel)]="tache.id" #i="ngModel"  required><br> 
+    <div *ngIf="i.invalid">
+        <div *ngIf="i.errors.required">le champ date est obligatoire</div>
+        </div>  
+<label>nom</label><br>
+<input type="text" name="nom" [(ngModel)]="tache.nom" #n="ngModel" minlength="5"><br>
+<div *ngIf="n.invalid">
+<div *ngIf="n.errors.minlength">le nom de tache doit contenir au moins 5 caracteres</div>
+</div>
+<label>date</label><br>
+<input type="text" name="date" [(ngModel)]="tache.date" #d="ngModel" required><br>
+<div *ngIf="d.invalid">
+<div *ngIf="d.errors.required">le champ date est obligatoire</div>
+</div>
+<button [disabled]="f.invalid" (click)="ajouter()">ajouter</button>
+</form>-->
+<br>
+<h2>Ajouter votre tâche </h2>
+<br>
+<form #f="ngForm" action="">
+
+    <div class="form-group"><input type="text" class="form-control" name="id" [(ngModel)]="tache.id" #i="ngModel"  required placeholder="Entrer votre ID"></div>
+    <div *ngIf="i.invalid">
+        <div class="alert alert-danger" *ngIf="i.errors.required && i.touched" [style.color]="'red'" [style.font-weight]="'bold'">le champ id est obligatoire</div>
+    </div>
+
+
+    
+    <div class="form-group"><input type="text" class="form-control" name="nom" [(ngModel)]="tache.nom" #n="ngModel" required minlength="5" placeholder="Entrer votre NOM" ></div>
+    <div *ngIf="n.invalid">
+        <div  class="alert alert-danger" *ngIf="n.errors.minlength" [style.color]="'red'" [style.font-weight]="'bold'">le nom de tache doit contenir au moins 5 caracteres</div>
+        <div class="alert alert-danger" *ngIf="n.touched && n.errors.required" [style.color]="'red'" [style.font-weight]="'bold'">le champ nom est obligatoire</div>
+    </div>
+
+
+   
+    <div class="form-group"><input type="text" class="form-control"  name="date" [(ngModel)]="tache.date" #d="ngModel" required placeholder="Entrer votre DATE"></div>
+    <div *ngIf="d.invalid ">
+        <div class="alert alert-danger" [style.color]="'red'" [style.font-weight]="'bold'" *ngIf="d.touched && d.errors.required" >le champ date est obligatoire</div>
+        </div>
+    
+    
+    <!--<div class="form-group"><input type="text" class="form-control" ></div>-->
+
+    <button class="btn btn-primary btn-block" [disabled]="f.invalid" (click)="ajouter()">ajouter</button>
+    
+</form>
+<br><br>
+
+<!--<div class="container">
+    <div class="row">
+      <div class="col-sm">
+        One of three columns
+      </div>
+      <div class="col-sm">
+        One of three columns
+      </div>
+      <div class="col-sm">
+        One of three columns
+      </div>
+    </div>
+  </div>-->

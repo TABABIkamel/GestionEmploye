@@ -1,0 +1,14 @@
+.container{
+    display: flex;
+    justify-content: space-between;
+
+}
+.first{
+  flex-grow: 4;
+  padding: 20px;
+
+}
+.second{
+    flex-grow: 4;
+    padding: 20px;
+}

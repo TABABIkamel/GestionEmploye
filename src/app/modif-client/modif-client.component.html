@@ -1,0 +1,26 @@
+<form #f="ngForm">
+    <label [style.font-weight]="'bold'">ID</label><br>
+   <div ><input type="text" class="form-control" name="id" [(ngModel)]="client.id" #n="ngModel" disabled [style.color]="'white'" [style.background-color]="'black'"></div> <br>
+<label [style.font-weight]="'bold'">NOM</label><br>
+<div class="form-group" ><input type="text" class="form-control" name="nom" [(ngModel)]="client.name" #n="ngModel" minlength="3"></div> <br>
+<div class="form-group" *ngIf="n.invalid">
+<div class="alert alert-danger" *ngIf="n.errors.minlength">le nom doit contenir au moins 3 caracteres</div>
+</div>
+<label [style.font-weight]="'bold'">USERNAME</label><br>
+<div class="form-group" ><input type="text" class="form-control" name="username" [(ngModel)]="client.username" #n="ngModel" minlength="3"></div> <br>
+<div class="form-group" *ngIf="n.invalid">
+<div class="alert alert-danger" *ngIf="n.errors.minlength">le username doit contenir au moins 3 caracteres</div>
+</div>
+<label [style.font-weight]="'bold'">EMAIL</label><br>
+<div class="form-group"><input type="text" class="form-control" name="email" [(ngModel)]="client.email" #e="ngModel" required></div> <br>
+<div class="form-group" *ngIf="e.invalid">
+    <div class="alert alert-danger" *ngIf="e.touched && e.errors.required">le champ email est obligatoire</div>
+    </div>
+<button class="btn btn-primary btn-block" [disabled]="f.invalid" (click)="modifier()">modifier</button>
+</form>
+
+
+
+
+
+

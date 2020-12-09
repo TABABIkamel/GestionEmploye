@@ -1,0 +1,125 @@
+
+<body>
+  <!--<a routerLink="/stock">afficer stock</a> <a routerLink="/clients">afficer clients</a> <a routerLink="/taches">afficer taches</a><br>
+<hr>
+<hr>-->
+<div class="container" *ngIf="isSignedIn" >
+  <nav class="navbar navbar-expand-sm navbar-light bg-primary">
+      <div class="item"><a class="navbar-brand" href="#" routerLink="/stock">Afficer stock</a></div>
+      <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+          aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="collapsibleNavId">
+          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+              <li class="nav-item active">
+                <div class="item"><a class="nav-link" href="#" routerLink="/clients">Afficer clients <span class="sr-only">(current)</span></a></div>  
+              </li>
+              <li class="nav-item">
+                 <div class="item"><a class="nav-link" href="#" routerLink="/taches">Afficer taches</a></div> 
+              </li>
+              <li class="nav-item">
+                  <div class="item"><a class="nav-link" href="#" (click)="logout()">LogOut</a></div> 
+               </li>
+          </ul>
+          
+      </div>
+  </nav>
+  <router-outlet></router-outlet>
+</div>
+<div id="demo" class="carousel slide" data-ride="carousel" *ngIf="signedIn">
+
+  <!-- Indicators -->
+  <ul class="carousel-indicators">
+    <li data-target="#demo" data-slide-to="0" class="active"></li>
+    <li data-target="#demo" data-slide-to="1"></li>
+    <li data-target="#demo" data-slide-to="2"></li>
+  </ul>
+  
+  <!-- The slideshow -->
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img [src]="url1" alt="Los Angeles" >
+    </div>
+    <div class="carousel-item">
+      <img [src]="url2" alt="Chicago" >
+    </div>
+    <div class="carousel-item">
+      <img [src]="url3" alt="New York">
+    </div>
+  </div>
+  
+  <!-- Left and right controls -->
+  <a class="carousel-control-prev" href="#demo" data-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </a>
+  <a class="carousel-control-next" href="#demo" data-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </a>
+</div>
+
+
+
+
+
+<div class="container-fluid" *ngIf="signedIn">
+  <div class="item form1">
+      <h2>SIGN UP</h2>
+      <form #f="ngForm">
+          <br>
+          <input type="text" class="form-control" name="adresse"  #i placeholder="Entrer votre Adresse"><br>  
+      <br>
+      <input type="text" class="form-control" name="password"  #n placeholder="Entrer votre password"><br>
+      <div  *ngIf="inSignup"> <div class="alert alert-danger">{{msg1}}</div></div>
+      <div *ngIf="inSignup1"> <div class="alert alert-success" >{{msgSucces}}</div></div>
+      <!--<button [disabled]="f.invalid" class="btn btn-primary btn-block" (click)="signUp(i.value,n.value)">SIGN UP</button>-->
+      <span>
+          <button class="btn btn-primary" [disabled]="f.invalid" class="btn btn-primary btn-block" (click)="signUp(i.value,n.value)">
+              <span *ngIf="pause1" class="spinner-border spinner-border-sm"></span>
+              <div *ngIf="pause1">
+                  Loading..
+              </div>
+              <div *ngIf="!pause1">
+                  SIGN UP
+              </div>
+          </button>
+      </span>
+      </form>
+  </div>
+  <div class="item form2">
+      <h2>SIGN IN</h2>  
+      <form #f="ngForm">
+      <br>
+          <input type="text" class="form-control" name="adresse"  #k placeholder="Entrer votre Adresse"><br>  
+      <br>
+      <input type="text" class="form-control" name="password"  #l placeholder="Entrer votre password"><br>
+      <div *ngIf="inSignin"> <div class="alert alert-danger" >{{msg2}}</div></div>
+      <span>
+          <!--<button [disabled]="f.invalid" class="btn btn-primary btn-block" (click)="signin(k.value,l.value)">SIGN IN</button>-->
+          <button class="btn btn-primary" [disabled]="f.invalid" class="btn btn-primary btn-block" (click)="signin(k.value,l.value)">
+              <span *ngIf="pause" class="spinner-border spinner-border-sm"></span>
+              <div *ngIf="pause">
+                  Loading..
+              </div>
+              <div *ngIf="!pause">
+                  SIGN IN
+              </div>
+              
+              
+            </button>
+      </span>
+      
+      </form>
+  </div>
+</div>
+</body>
+
+
+    
+
+
+
+
+
+ 
+
