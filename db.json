@@ -18,16 +18,22 @@
   },
   "stock": [
     {
-      "id": "8",
-      "nom": "nnnddsg",
-      "marque": "vvvvsdvxc",
-      "prix": "555"
+      "id": "1",
+      "nom": "T-chirt",
+      "marque": "Nike",
+      "prix": "95"
     },
     {
       "id": "2",
-      "nom": "mmm",
-      "marque": ",nnnn",
-      "prix": "111"
+      "nom": "chemise",
+      "marque": "Celio",
+      "prix": "120"
+    },
+    {
+      "id": "3",
+      "nom": "chaussure",
+      "marque": "adidas",
+      "prix": "500"
     }
   ],
   "clients": [
@@ -47,43 +53,18 @@
   "taches": [
     {
       "id": "1",
-      "nom": "maintenance",
-      "date": "12-02-2020"
+      "nom": "nettoyage",
+      "date": "12/02/2020"
     },
     {
       "id": "2",
-      "nom": "kamel",
-      "date": "14/02/2022"
+      "nom": "emballage",
+      "date": "13/02/2020"
     },
     {
       "id": "3",
-      "nom": "maintenance",
-      "date": "12/02/2020"
-    },
-    {
-      "id": "4",
-      "nom": "maintenance",
-      "date": "12/02/2020"
-    },
-    {
-      "id": "5",
-      "nom": "maintenance",
-      "date": "12/02/2020"
-    },
-    {
-      "id": "6",
-      "nom": "Kurtis",
-      "date": "14/02/2022"
-    },
-    {
-      "id": "7",
-      "nom": "vvvvvv",
-      "date": "12/02/2020"
-    },
-    {
-      "id": "8",
-      "nom": "kamel",
-      "date": "14/02/2022"
+      "nom": "nettoyage",
+      "date": "14/02/2020"
     }
   ]
 }
