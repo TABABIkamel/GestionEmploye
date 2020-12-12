@@ -6,31 +6,28 @@
         </div>
     
     <div class="form-group">
-    <input class="form-control" type="text" name="nom" [(ngModel)]="client.name" #n="ngModel" minlength="3" placeholder="Entrer votre NOM"><br>
+    <input class="form-control" type="text" name="nom" [(ngModel)]="client.name" #n="ngModel"  placeholder="Entrer votre NOM" minlength="3"><br>
     <div *ngIf="n.invalid">
     <div *ngIf="n.errors.minlength" [style.color]="'red'" class="alert alert-danger" [style.font-weight]="'bold'">le nom doit contenir au moins 3 caracteres</div>
     </div>
     </div> 
     
     <div class="form-group">
-    <input class="form-control" type="text" name="username" [(ngModel)]="client.username" #u="ngModel" minlength="3" placeholder="Entrer votre USER NAME" required><br>
-    <div *ngIf="u.invalid">
-        <div *ngIf="u.touched && u.errors.required" [style.color]="'red'" class="alert alert-danger" [style.font-weight]="'bold'">le champ username est obligatoire</div>
-    <div *ngIf="u.errors.minlength" [style.color]="'red'" class="alert alert-danger" [style.font-weight]="'bold'">le username doit contenir au moins 3 caracteres</div>
-    </div>
-    </div>
+        <input class="form-control" type="text" name="username" [(ngModel)]="client.username" #u="ngModel"  placeholder="Entrer votre USER NAME" required minlength="3"><br>
+        <div *ngIf="u.invalid">
+            <div *ngIf="u.touched && u.errors.required" [style.color]="'red'" class="alert alert-danger" [style.font-weight]="'bold'">le champ username est obligatoire</div>
+        <div *ngIf="u.touched && u.errors.minlength" [style.color]="'red'" class="alert alert-danger" [style.font-weight]="'bold'">le username doit contenir au moins 3 caracteres</div>
+        </div>
+        </div>
     
     <div>
-    <input class="form-control" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter votre EMAIL" type="email" name="email" [(ngModel)]="client.email" #e="ngModel" required><br>
-    </div>
-    <div *ngIf="e.invalid">
+        <input  class="form-control"  placeholder="Enter votre EMAIL" type="text" name="email" [(ngModel)]="client.email" #e="ngModel" required><br>
+        <div *ngIf="e.invalid">
         <div *ngIf="e.touched && e.errors.required" class="alert alert-danger" [style.color]="'red'" [style.font-weight]="'bold'">le champ email est obligatoire</div>
-    </div>    
-    <div class="form-group form-check">
-          <input type="checkbox" class="form-check-input" id="exampleCheck1">
-          <label class="form-check-label" class="alert alert-danger" for="exampleCheck1">Check me out</label>
+        </div>    
     </div>
-    <button class="btn btn-primary" [disabled]="f.invalid" (click)="ajouter()">ajouter</button>
+    
+    <button class="btn btn-primary" (click)="ajouter()">ajouter</button>
     </form>
 
 

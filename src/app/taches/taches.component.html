@@ -8,7 +8,7 @@
             <th scope="col">nom</th>
           </tr>
         </thead>
-      <tr *ngFor="let p of listTache">
+      <tr *ngFor="let p of listTache;first as f" [ngClass]="{'firstt':f}">
         <td>{{p.id}}</td>  <td>{{p.date}}</td> <td>{{p.nom}}</td> <td><button (click)="supp(p.id)">supprimer</button></td>
       </tr>
   </table>

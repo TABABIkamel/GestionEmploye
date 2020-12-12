@@ -20,7 +20,7 @@
               <th scope="col">email</th>
             </tr>
           </thead>
-        <tr *ngFor="let p of listClients">
+        <tr *ngFor="let p of listClients;first as f" [ngClass]="{'first':f}">
             <td>{{p.id}}</td> <td>{{p.name}}</td> <td>{{p.username}}</td> <td>{{p.email}}</td> <td><button (click)="supp(p.id)">supprimer</button></td> <td><button [routerLink]="['/modifClient',p.id]">Modifier</button></td>
         </tr>
     </table>

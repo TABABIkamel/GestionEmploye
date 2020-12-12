@@ -18,44 +18,39 @@
   },
   "stock": [
     {
-      "id": "1",
-      "nom": "T-chirt",
-      "marque": "Nike",
-      "prix": "95"
+      "id": "5",
+      "nom": "t-chirt",
+      "marque": "nike",
+      "prix": "55"
     },
     {
       "id": "2",
-      "nom": "chemise",
-      "marque": "Celio",
-      "prix": "120"
+      "nom": "t-chirt",
+      "marque": "adidas",
+      "prix": "88"
     },
     {
-      "id": "3",
-      "nom": "chaussure",
-      "marque": "adidas",
-      "prix": "500"
+      "id": "1",
+      "nom": "chemise",
+      "marque": "celio",
+      "prix": "44"
     }
   ],
   "clients": [
     {
-      "id": "3",
-      "name": "vvvvvv",
-      "username": "Leopoldo_Corkery",
-      "email": "dddd@gmail.com"
+      "id": "1",
+      "name": "kamel",
+      "username": "tababi",
+      "email": "kamel.tababi@esprit.tn"
     },
     {
-      "id": "4",
-      "name": "kamel",
-      "username": "Leopoldo_Corkery",
-      "email": "kameltababi98@gmail.com"
+      "id": "2",
+      "name": "Kurtis",
+      "username": "Moriah.Stanton",
+      "email": "Karley_Dach@jasper.info"
     }
   ],
   "taches": [
-    {
-      "id": "1",
-      "nom": "nettoyage",
-      "date": "12/02/2020"
-    },
     {
       "id": "2",
       "nom": "emballage",
@@ -65,6 +60,16 @@
       "id": "3",
       "nom": "nettoyage",
       "date": "14/02/2020"
+    },
+    {
+      "id": "4",
+      "nom": "déménage du rayon A",
+      "date": "15/02/2020"
+    },
+    {
+      "id": "1",
+      "nom": "maintenance",
+      "date": "12/02/2020"
     }
   ]
 }

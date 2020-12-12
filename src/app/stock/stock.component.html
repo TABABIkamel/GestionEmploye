@@ -21,7 +21,7 @@
           <th scope="col">prix</th>
         </tr>
       </thead>
-    <tr *ngFor="let p of listStock" >
+    <tr *ngFor="let p of listStock; first as f" [ngClass]="{'first':f}">
         <td>{{p.id}}</td> <td>{{p.nom}}</td> <td>{{p.marque}}</td> <td>{{p.prix}}</td> 
         <td><button type="button"  (click)="supprimer(p.id)">supprimer</button></td> <td><button [routerLink]="['/modifStock',p.id]" >modifier</button></td>
     </tr>
